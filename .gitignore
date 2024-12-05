@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Electron build artifacts
+/dist/
+/out/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directories
+/.vscode/
+/.idea/
+/build/
+
+# Electron package output
+/electron/
