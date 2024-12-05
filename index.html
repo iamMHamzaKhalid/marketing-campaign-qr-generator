@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing Campaign QR Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+</head>
+
+<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+    <div class="max-w-2xl mx-auto p-6 flex-grow">
+        <h1 class="text-3xl font-bold mb-6 text-center">Marketing Campaign QR Generator</h1>
+
+        <!-- Service Base URL and Excel File -->
+        <div class="flex items-center mb-4">
+            <input type="text" id="serviceBaseUrlInput" placeholder="Service QR Base URL"
+                class="flex-grow mr-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+            <button id="serviceSheetBtn"
+                class="w-48 bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600 text-sm">
+                Select Service Sheet(xlsx)
+            </button>
+        </div>
+        <span id="serviceSheetPath" class="block mb-2 text-sm text-gray-600"></span>
+
+        <!-- Guide Base URL and Excel File -->
+        <div class="flex items-center mb-4">
+            <input type="text" id="guideBaseUrlInput" placeholder="Guide QR Base URL"
+                class="flex-grow mr-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+            <button id="guideSheetBtn"
+                class="w-48 bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600 text-sm">
+                Select Guide Sheet(xlsx)
+            </button>
+        </div>
+        <span id="guideSheetPath" class="block mb-2 text-sm text-gray-600"></span>
+
+        <!-- Output Directory -->
+        <div class="flex items-center mb-8">
+            <button id="selectDirBtn" class="bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600 text-sm">
+                Select Output Directory
+            </button>
+            <span id="selectedDir" class="ml-2 text-sm text-gray-600"></span>
+        </div>
+
+        <!-- Generate QR Codes Button -->
+        <div class="mt-8">
+            <button id="processBtn"
+                class="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 text-sm">
+                Generate QR Codes
+            </button>
+        </div>
+    </div>
+
+    <!-- Console Bar -->
+    <div id="consoleBar" class="bg-gray-800 text-white p-4">
+        <div id="consoleQR" class="text-sm h-64 overflow-y-auto bg-black p-2 mb-2">
+            <!-- QR generation logs will appear here -->
+        </div>
+        <div id="status" class="text-sm">Status: <span id="statusText">Idle</span></div>
+    </div>
+    <script src="renderer.js" defer></script>
+</body>
+
+</html>
